@@ -1,0 +1,4 @@
+export enum categoriesTypes {
+	GET_CATEGORIES = 'GET_CATEGORIES',
+	SET_CATEGORIES = 'SET_CATEGORIES',
+}
