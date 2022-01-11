@@ -5,8 +5,8 @@ export const Query = {
 		let filteredProducts = products;
 
 		if (filter) {
-			const { onSale, avgRating } = filter;
-			if (onSale !== undefined) {
+			const { onSale, avgRating, categoryIds } = filter;
+			if (onSale) {
 				filteredProducts = filteredProducts.filter(product => product.onSale === filter.onSale);
 			}
 
@@ -23,6 +23,10 @@ export const Query = {
 					const averageProductRating = sumRating / numberOfReviews;
 					return averageProductRating >= avgRating;
 				});
+			}
+
+			if (categoryIds && categoryIds.length) {
+				filteredProducts = filteredProducts.filter(product => categoryIds.includes(product.categoryId));
 			}
 		}
 

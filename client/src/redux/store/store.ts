@@ -6,7 +6,7 @@ import categoriesReducer from '../reducers/categoriesReducer';
 import rootSaga from '../sagas/saga';
 
 const reducer = combineReducers({
-	products: productsReducer,
+	productsReducer,
 	categories: categoriesReducer,
 });
 

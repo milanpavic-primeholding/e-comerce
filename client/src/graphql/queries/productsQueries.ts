@@ -12,8 +12,8 @@ export const GET_PRODUCTS_QUERY = gql`
 `;
 
 export const GET_PRODUCT_QUERY = gql`
-	query Products($filter: ProductsFilterInput) {
-		products(filter: $filter) {
+	query Product($productId: ID!) {
+		product(id: $productId) {
 			id
 			name
 			description

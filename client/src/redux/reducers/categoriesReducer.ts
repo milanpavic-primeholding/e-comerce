@@ -1,4 +1,5 @@
 import { categoriesTypes } from '../actionTypes/categoriesTypes';
+import { Reducer } from 'redux';
 
 export interface Category {
 	id: string;
@@ -20,10 +21,10 @@ const initialState: InitialState = {
 	categories: [],
 };
 
-const categoriesReducer = (state = initialState, { type, payload }: Action) => {
-	switch (type) {
+const categoriesReducer: Reducer<InitialState, Action> = (state = initialState, action): InitialState => {
+	switch (action.type) {
 		case categoriesTypes.SET_CATEGORIES:
-			return { categories: payload };
+			return { categories: action.payload };
 		default:
 			return state;
 	}
